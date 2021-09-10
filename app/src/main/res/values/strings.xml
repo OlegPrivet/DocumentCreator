@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Document Creator</string>
+    <string name="menu_settings">Настройки</string>
+    <string name="menu_files">Файлы</string>
+</resources>
