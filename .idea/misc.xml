@@ -3,8 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable-anydpi/ic_doc.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable-anydpi/ic_home.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable-anydpi/ic_list.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable-anydpi/ic_pdf.xml" value="0.11" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable-anydpi/ic_ppt.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable-anydpi/ic_settings.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable-anydpi/ic_txt.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable-anydpi/ic_xls.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/splash_gradient.xml" value="0.22" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/splash_gradient2.xml" value="0.22" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/layout/activity_splash.xml" value="0.22" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/layout/content_splash.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/layout/fragment_home.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/layout/fragment_settings.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/menu/bottom_menu.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/xml/file_path.xml" value="0.1814814814814815" />
       </map>
     </option>
   </component>
