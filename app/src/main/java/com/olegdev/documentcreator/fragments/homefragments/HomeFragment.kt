@@ -46,14 +46,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     fun initView(){
         docViewModel.lvDocData.observe(viewLifecycleOwner, Observer { files ->
             //progressBar?.visibility = View.GONE
+            files.forEach { document ->
 
+            }
         })
         docViewModel.getDocs(PickManager.getFileTypes(), PickManager.sortingType.comparator)
-    }
-
-    override fun onResume() {
-        super.onResume()
-
     }
 
     private val activityResultLauncher = registerForActivityResult(

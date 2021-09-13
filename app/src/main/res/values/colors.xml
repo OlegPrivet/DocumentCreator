@@ -5,5 +5,7 @@
     <color name="colorAccent">#FFD700</color>
     <color name="logoColor">#e60000</color>
     <color name="textColorPrimary">#000000</color>
+    <color name="backgroundColor">#ffffff</color>
     <color name="white">#ffffff</color>
+    <color name="gray">#808080</color>
 </resources>

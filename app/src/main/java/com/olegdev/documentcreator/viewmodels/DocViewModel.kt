@@ -17,15 +17,16 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
 import java.util.*
+import kotlin.collections.ArrayList
 
 class DocViewModel(app : Application) : BaseViewModelPicData(app) {
 
-    private val _lvDocData = MutableLiveData<HashMap<FileType, List<Document>>>()
-    val lvDocData: LiveData<HashMap<FileType, List<Document>>>
+    private val _lvDocData = MutableLiveData<ArrayList<Document>>()
+    val lvDocData: LiveData<ArrayList<Document>>
         get() = _lvDocData
 
 
-    fun getDocs(fileTypes: List<FileType>, comparator: Comparator<Document>?) {
+    fun getDocs(fileTypes: ArrayList<FileType>, comparator: Comparator<Document>?) {
         startDataLoad {
             val dirs = queryDocs(fileTypes, comparator)
             _lvDocData.postValue(dirs)
@@ -34,10 +35,10 @@ class DocViewModel(app : Application) : BaseViewModelPicData(app) {
 
     @WorkerThread
     suspend fun queryDocs(
-        fileTypes: List<FileType>,
+        fileTypes: ArrayList<FileType>,
         comparator: Comparator<Document>?
-    ): HashMap<FileType, List<Document>> {
-        var data = HashMap<FileType, List<Document>>()
+    ): ArrayList<Document> {
+        var data = ArrayList<Document>()
         withContext(Dispatchers.IO) {
 
             val selection =
@@ -49,7 +50,7 @@ class DocViewModel(app : Application) : BaseViewModelPicData(app) {
                 MediaStore.Files.FileColumns.DATA,
                 MediaStore.Files.FileColumns.MIME_TYPE,
                 MediaStore.Files.FileColumns.SIZE,
-                MediaStore.Files.FileColumns.DATE_ADDED,
+                MediaStore.Files.FileColumns.DATE_MODIFIED,
                 MediaStore.Files.FileColumns.TITLE
             )
 
@@ -71,11 +72,11 @@ class DocViewModel(app : Application) : BaseViewModelPicData(app) {
 
     @WorkerThread
     private fun createDocumentType(
-        fileTypes: List<FileType>,
+        fileTypes: ArrayList<FileType>,
         comparator: Comparator<Document>?,
         documents: MutableList<Document>
-    ): HashMap<FileType, List<Document>> {
-        val documentMap = HashMap<FileType, List<Document>>()
+    ): ArrayList<Document> {
+        var documentMap = ArrayList<Document>()
 
         for (fileType in fileTypes) {
             val documentListFilteredByType = documents.filter { document ->
@@ -89,7 +90,7 @@ class DocViewModel(app : Application) : BaseViewModelPicData(app) {
                 documentListFilteredByType.sortedWith(comparator)
             }
 
-            documentMap[fileType] = documentListFilteredByType
+            documentMap = documentListFilteredByType as ArrayList<Document>
         }
 
         return documentMap
@@ -125,6 +126,9 @@ class DocViewModel(app : Application) : BaseViewModelPicData(app) {
                     } else {
                         document.mimeType = ""
                     }
+                    val last_edit =
+                        data.getLong(data.getColumnIndexOrThrow(MediaStore.Files.FileColumns.DATE_MODIFIED))
+                    document.date_modified = last_edit
 
                     document.size =
                         data.getString(data.getColumnIndexOrThrow(MediaStore.Files.FileColumns.SIZE))

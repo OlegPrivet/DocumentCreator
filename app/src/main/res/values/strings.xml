@@ -6,4 +6,5 @@
     <string name="give_perm">Дать разрешение</string>
     <string name="logo_name">pDf</string>
     <string name="text_welcome">Добро пожаловать в Documentor</string>
+    <string name="add_new_file">Добавить новый файл</string>
 </resources>
