@@ -9,5 +9,21 @@
         android:id="@+id/homeFragment"
         android:name="com.olegdev.documentcreator.fragments.homefragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_pdfsFragment"
+            app:destination="@id/pdfsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pdfsFragment"
+        android:name="com.olegdev.documentcreator.fragments.homefragments.pdfsfragment.PdfsFragment"
+        android:label="fragment_pdfs"
+        tools:layout="@layout/fragment_pdfs" >
+        <action
+            android:id="@+id/action_pdfsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="docId"
+            app:argType="integer" />
+    </fragment>
 </navigation>

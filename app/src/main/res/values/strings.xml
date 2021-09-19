@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Document Creator</string>
+    <string name="app_name">Documentor</string>
     <string name="menu_settings">Настройки</string>
     <string name="menu_files">Файлы</string>
     <string name="menu_main">Главная</string>
@@ -7,4 +7,9 @@
     <string name="logo_name">pDf</string>
     <string name="text_welcome">Добро пожаловать в Documentor</string>
     <string name="add_new_file">Добавить новый файл</string>
+    <string name="search">Search</string>
+    <string name="file_name">Название файла</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="more">More</string>
 </resources>

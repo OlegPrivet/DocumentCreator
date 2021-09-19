@@ -2,10 +2,12 @@
 <resources>
     <color name="colorPrimary">#ffffff</color>
     <color name="colorPrimaryVariant">#e60000</color>
-    <color name="colorAccent">#FFD700</color>
+    <color name="colorAccent">#e60000</color>
+    <color name="rippleColor">#19E60000</color>
     <color name="logoColor">#e60000</color>
     <color name="textColorPrimary">#000000</color>
     <color name="backgroundColor">#ffffff</color>
     <color name="white">#ffffff</color>
     <color name="gray">#808080</color>
+    <color name="search_icon_color">#000000</color>
 </resources>

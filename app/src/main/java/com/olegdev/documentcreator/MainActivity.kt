@@ -1,7 +1,9 @@
 package com.olegdev.documentcreator
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.olegdev.documentcreator.extension.setupWithNavController
 
@@ -36,5 +38,24 @@ class MainActivity : AppCompatActivity() {
             containerId = R.id.navController,
             intent = intent
         )
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.navController) as NavHostFragment
+        val navController = navHostFragment.navController
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.homeFragment -> showBottomNav()
+                R.id.settingsFragment -> showBottomNav()
+                else -> hideBottomNav()
+            }
+        }
+    }
+
+    private fun showBottomNav() {
+        bottomView.visibility = View.VISIBLE
+
+    }
+
+    private fun hideBottomNav() {
+        bottomView.visibility = View.GONE
+
     }
 }

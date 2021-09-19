@@ -6,11 +6,12 @@
     android:layout_height="60dp"
     android:layout_margin="8dp"
     app:cardCornerRadius="16dp"
-    app:cardElevation="8dp">
+    app:cardElevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/custom_ripple">
 
         <ImageView
             android:id="@+id/iv_pdf"
@@ -32,7 +33,9 @@
             app:layout_constraintEnd_toStartOf="@+id/btn_more"
             app:layout_constraintStart_toEndOf="@+id/iv_pdf"
             app:layout_constraintTop_toTopOf="@+id/iv_pdf"
-            tools:text="name" />
+            tools:text="name"
+            android:lines="1"
+            android:ellipsize="end"/>
 
         <TextView
             android:id="@+id/tv_size"
@@ -57,16 +60,17 @@
             tools:text="date" />
 
         <ImageButton
+            android:tag="btn_more"
             android:id="@+id/btn_more"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="8dp"
-            android:background="@android:color/transparent"
             android:src="@drawable/ic_more"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/custom_ripple_button"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
