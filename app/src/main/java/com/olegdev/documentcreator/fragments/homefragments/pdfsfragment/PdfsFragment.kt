@@ -1,6 +1,7 @@
 package com.olegdev.documentcreator.fragments.homefragments.pdfsfragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,12 +13,15 @@ import com.github.barteksc.pdfviewer.util.FitPolicy
 import com.olegdev.documentcreator.R
 import com.olegdev.documentcreator.models.Document
 import com.olegdev.documentcreator.viewmodels.FileViewModel
+import java.util.*
 
 class PdfsFragment : Fragment() {
 
+    private val TAG = PdfsFragment::class.simpleName
+
     private lateinit var fileViewModel: FileViewModel
     private lateinit var document: Document
-    private var docId: Int = 0
+    private lateinit var docId: UUID
     private var currentPage = 0
     private lateinit var pdfView: PDFView
     private val args by navArgs<PdfsFragmentArgs>()
@@ -77,6 +81,7 @@ class PdfsFragment : Fragment() {
         super.onStop()
         document.currentPage = currentPage
         document.date_modified = System.currentTimeMillis()
+        Log.e(TAG, "document - $document")
         fileViewModel.saveFile(document)
     }
 }

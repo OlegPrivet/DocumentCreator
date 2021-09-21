@@ -1,9 +1,9 @@
 package com.olegdev.documentcreator.adapters.diffutils
 
 import androidx.recyclerview.widget.DiffUtil
-import com.olegdev.documentcreator.models.BaseFile
+import com.olegdev.documentcreator.models.Document
 
-class ListDiffUtils<P>(private val oldList: List<P>, private val newList: List<P>) : DiffUtil.Callback() {
+class ListDiffUtils(private val oldList: List<Document>, private val newList: List<Document>) : DiffUtil.Callback() {
     override fun getOldListSize(): Int {
         return oldList.size
     }
@@ -17,9 +17,9 @@ class ListDiffUtils<P>(private val oldList: List<P>, private val newList: List<P
     }
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        val modelOld = oldList[oldItemPosition] as BaseFile
-        val modelNew = newList[newItemPosition] as BaseFile
-        return modelOld.id == modelNew.id
+        val modelOld = oldList[oldItemPosition]
+        val modelNew = newList[newItemPosition]
+        return modelOld.uuid == modelNew.uuid
                 && modelOld.name == modelNew.name
                 && modelOld.path == modelNew.path
     }

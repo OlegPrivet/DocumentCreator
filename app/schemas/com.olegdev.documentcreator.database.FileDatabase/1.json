@@ -2,15 +2,21 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "1b9cd49138ac3d15f8b4c268cc7d9cc0",
+    "identityHash": "0917b21c5dc7422f31b3fc834222f4bb",
     "entities": [
       {
         "tableName": "Document",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `name` TEXT NOT NULL, `path` TEXT NOT NULL, `mimeType` TEXT, `size` TEXT, `date_modified` INTEGER, `currentPage` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` TEXT NOT NULL, `id_file` INTEGER NOT NULL, `name` TEXT NOT NULL, `path` TEXT NOT NULL, `mimeType` TEXT, `size` TEXT, `date_modified` INTEGER, `currentPage` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
-            "fieldPath": "id",
-            "columnName": "id",
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id_file",
+            "columnName": "id_file",
             "affinity": "INTEGER",
             "notNull": true
           },
@@ -53,7 +59,7 @@
         ],
         "primaryKey": {
           "columnNames": [
-            "id"
+            "uuid"
           ],
           "autoGenerate": false
         },
@@ -64,7 +70,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1b9cd49138ac3d15f8b4c268cc7d9cc0')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '0917b21c5dc7422f31b3fc834222f4bb')"
     ]
   }
 }

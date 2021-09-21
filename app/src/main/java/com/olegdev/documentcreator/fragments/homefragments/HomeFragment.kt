@@ -49,7 +49,9 @@ class HomeFragment : Fragment() {
             this,
             ViewModelProvider.AndroidViewModelFactory(requireActivity().application)
         ).get(PickManager::class.java)
-        pickManager.searchDocs()
+        if (PermUtils.hasPermissions(requireActivity().applicationContext)) {
+            pickManager.searchDocs()
+        }
     }
 
     override fun onCreateView(
@@ -94,7 +96,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun seePdf(document: Document){
-        val action = HomeFragmentDirections.actionHomeFragmentToPdfsFragment(docId = document.id)
+        val action = HomeFragmentDirections.actionHomeFragmentToPdfsFragment(docId = document.uuid)
         Navigation.findNavController(requireActivity().findViewById(R.id.home_root_view)).navigate(action)
     }
 
@@ -157,7 +159,10 @@ class HomeFragment : Fragment() {
                 return@forEach
             }
         }
-        if (granted) initView()
+        if (granted) {
+            pickManager.searchDocs()
+            initView()
+        }
     }
 
     override fun onDetach() {

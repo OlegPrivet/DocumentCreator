@@ -24,6 +24,6 @@
             app:destination="@id/homeFragment" />
         <argument
             android:name="docId"
-            app:argType="integer" />
+            app:argType="java.util.UUID" />
     </fragment>
 </navigation>

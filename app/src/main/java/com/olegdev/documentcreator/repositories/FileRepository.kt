@@ -1,10 +1,12 @@
 package com.olegdev.documentcreator.repositories
 
 import android.content.Context
+import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.room.Room
 import com.olegdev.documentcreator.database.FileDatabase
 import com.olegdev.documentcreator.models.Document
+import java.util.*
 
 private const val DATABASE_NAME = "file-database"
 
@@ -20,7 +22,8 @@ class FileRepository private constructor(context: Context){
 
     fun getFiles(): LiveData<List<Document>> = fileDao.getFiles()
     suspend fun getFilesNoLiveData(): List<Document> = fileDao.getFilesNoLiveData()
-    fun getFile(id: Int): LiveData<Document> = fileDao.getFile(id = id)
+    fun getFile(uuid: UUID): LiveData<Document> = fileDao.getFile(uuid = uuid)
+    fun getFileOnPath(path: Uri): Document = fileDao.getFileOnPath(path = path)
 
     suspend fun updateDocument(document: Document) {
         fileDao.updateFile(document)

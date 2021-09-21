@@ -1,27 +1,26 @@
 package com.olegdev.documentcreator.viewmodels
 
-import android.app.Application
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
+import androidx.lifecycle.*
 import com.olegdev.documentcreator.models.Document
 import com.olegdev.documentcreator.repositories.FileRepository
+import kotlinx.coroutines.launch
+import java.util.*
 
-class FileViewModel(app: Application) : BaseViewModel(app) {
+class FileViewModel : ViewModel() {
 
     private val fileRepository = FileRepository.get()
-    private val fileIdLiveData = MutableLiveData<Int>()
+    private val fileIdLiveData = MutableLiveData<UUID>()
 
     var fileLiveData: LiveData<Document> =
         Transformations.switchMap(fileIdLiveData) { docId ->
             fileRepository.getFile(docId)
         }
 
-    fun loadFile(docId: Int){
+    fun loadFile(docId: UUID){
         fileIdLiveData.value = docId
     }
 
-    fun saveFile(document: Document) = startDataLoad {
+    fun saveFile(document: Document) = viewModelScope.launch {
         fileRepository.updateDocument(document)
     }
 }

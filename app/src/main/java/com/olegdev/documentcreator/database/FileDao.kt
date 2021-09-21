@@ -1,8 +1,10 @@
 package com.olegdev.documentcreator.database
 
+import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.olegdev.documentcreator.models.Document
+import java.util.*
 
 @Dao
 interface FileDao {
@@ -10,8 +12,10 @@ interface FileDao {
     fun getFiles():LiveData<List<Document>>
     @Query("SELECT * FROM document")
     suspend fun getFilesNoLiveData():List<Document>
-    @Query("SELECT * FROM document WHERE id = (:id)")
-    fun getFile(id: Int):LiveData<Document>
+    @Query("SELECT * FROM document WHERE uuid = (:uuid)")
+    fun getFile(uuid: UUID):LiveData<Document>
+    @Query("SELECT * FROM document WHERE path = (:path)")
+    fun getFileOnPath(path: Uri):Document
     @Update
     suspend fun updateFile(document: Document)
     @Insert
