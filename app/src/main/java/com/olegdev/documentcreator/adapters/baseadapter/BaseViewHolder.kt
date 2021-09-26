@@ -1,4 +1,4 @@
-package com.example.criminalintent.adapters.baseadapter
+package com.olegdev.documentcreator.adapters.baseadapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

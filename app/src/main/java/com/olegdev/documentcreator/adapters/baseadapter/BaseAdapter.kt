@@ -1,4 +1,4 @@
-package com.example.criminalintent.adapters.baseadapter
+package com.olegdev.documentcreator.adapters.baseadapter
 
 import android.annotation.SuppressLint
 import androidx.recyclerview.widget.RecyclerView

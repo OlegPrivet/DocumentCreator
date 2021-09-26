@@ -21,7 +21,8 @@
         tools:layout="@layout/fragment_pdfs" >
         <action
             android:id="@+id/action_pdfsFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment" />
         <argument
             android:name="docId"
             app:argType="java.util.UUID" />

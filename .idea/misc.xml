@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Code/.gradle/caches/transforms-3/622843fe3639fd47f09b202ed15e3104/transformed/jetified-android-pdf-viewer-3.2.0-beta.1/res/drawable/default_scroll_handle_bottom.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Code/.gradle/caches/transforms-3/622843fe3639fd47f09b202ed15e3104/transformed/jetified-android-pdf-viewer-3.2.0-beta.1/res/drawable/default_scroll_handle_left.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Code/.gradle/caches/transforms-3/622843fe3639fd47f09b202ed15e3104/transformed/jetified-android-pdf-viewer-3.2.0-beta.1/res/drawable/default_scroll_handle_right.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable-anydpi-v24/ic_add.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable-anydpi/ic_add.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable-anydpi/ic_doc.xml" value="0.19583333333333333" />
@@ -16,23 +19,39 @@
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable-anydpi/ic_xls.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/custom_ripple.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/custom_ripple_button.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/ic_back.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/ic_dark_mode.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/ic_home.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/ic_light_mode.xml" value="0.1" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/ic_search.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/ic_settings.xml" value="1.321875" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/mtrl_fab_hide_motion_spec.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/outline_light_mode_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/scroll_handler.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/scroll_handler_bottom.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/splash_background.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/splash_gradient.xml" value="0.22" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/splash_gradient2.xml" value="0.22" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/layout/activity_splash.xml" value="0.22" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/layout/activity_web_view.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/layout/content_splash.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/layout/file_bottom_sheet.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/layout/fragment_home.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/layout/fragment_modal_bottom_sheet.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/layout/fragment_pdfs.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/layout/fragment_settings.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/layout/modal_bottom_sheet_dialog_item.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/layout/rec_item.xml" value="0.33" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/menu/bottom_app_bar_menu.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/menu/bottom_menu.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/menu/botton_app_bar_menu.xml" value="0.25" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/menu/search_menu.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/xml/file_path.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/xml/network_security_config.xml" value="0.1814814814814815" />
       </map>
     </option>
   </component>

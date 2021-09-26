@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.Room
 import com.olegdev.documentcreator.database.FileDatabase
 import com.olegdev.documentcreator.models.Document
+import kotlinx.coroutines.flow.Flow
 import java.util.*
 
 private const val DATABASE_NAME = "file-database"
@@ -36,6 +37,11 @@ class FileRepository private constructor(context: Context){
     suspend fun deleteDocument(document: Document) {
         fileDao.deleteFile(document)
     }
+
+    fun searchDatabase(searchQuery: String): Flow<List<Document>> {
+        return fileDao.searchDatabase(searchQuery)
+    }
+
 
     companion object{
         private var INSTANCE: FileRepository? = null

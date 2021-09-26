@@ -4,6 +4,7 @@ import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.olegdev.documentcreator.models.Document
+import kotlinx.coroutines.flow.Flow
 import java.util.*
 
 @Dao
@@ -22,4 +23,6 @@ interface FileDao {
     suspend fun addFile(document: Document)
     @Delete
     suspend fun deleteFile(document: Document)
+    @Query("SELECT * FROM document WHERE name LIKE :searchQuery")
+    fun searchDatabase(searchQuery: String): Flow<List<Document>>
 }

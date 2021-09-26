@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimary">#FF5252</color>
     <color name="colorPrimaryVariant">#D50000</color>
     <color name="colorOnPrimary">#D50000</color>
     <color name="colorSecondary">#D50000</color>
     <color name="colorSecondaryVariant">#D50000</color>
     <color name="colorOnSecondary">#000000</color>
-    <color name="colorSurface">#ffffff</color>
-    <color name="colorControlNormal">#000000</color>
-    <color name="colorOnSurface">#000000</color>
-    <color name="colorBackground">#ffffff</color>
-    <color name="colorOnBackground">#000000</color>
+    <color name="colorSurface">#121212</color>
+    <color name="colorOnSurface">#ffffff</color>
+    <color name="colorControlNormal">#ffffff</color>
+    <color name="colorBackground">#121212</color>
+    <color name="colorOnBackground">#ffffff</color>
 
     <color name="rippleColor">#19E60000</color>
     <color name="logoColor">#D50000</color>
-    <color name="textColorPrimary">#000000</color>
+    <color name="textColorPrimary">#ffffff</color>
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
     <color name="gray">#808080</color>
     <color name="search_icon_color">#000000</color>
     <color name="background_scroll_handler">#ffffff</color>
-    <color name="color_text_scroll_handler">#000000</color>
+    <color name="color_text_scroll_handler">#ffffff</color>
 </resources>

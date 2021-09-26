@@ -33,7 +33,7 @@
                 android:layout_height="?attr/actionBarSize"
                 android:fontFamily="@font/josefin_sans_bold"
                 app:layout_collapseMode="pin"
-                app:title="@string/app_name" />
+                app:title="@string/app_name"/>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -62,7 +62,9 @@
         android:contentDescription="@string/add_new_file"
         android:elevation="16dp"
         android:src="@drawable/ic_add"
-        android:visibility="gone" />
+        app:showMotionSpec="@anim/mtrl_fab_show_motion_spec"
+        app:hideMotionSpec="@anim/mtrl_fab_hide_motion_spec"
+        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"/>
 
     <ProgressBar
         android:id="@+id/progress_bar"

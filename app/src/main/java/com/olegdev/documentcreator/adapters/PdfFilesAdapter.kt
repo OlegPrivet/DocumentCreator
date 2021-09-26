@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
-import com.example.criminalintent.adapters.baseadapter.BaseAdapter
-import com.example.criminalintent.adapters.baseadapter.BaseAdapterCallback
-import com.example.criminalintent.adapters.baseadapter.BaseViewHolder
 import com.olegdev.documentcreator.R
+import com.olegdev.documentcreator.adapters.baseadapter.BaseAdapter
+import com.olegdev.documentcreator.adapters.baseadapter.BaseAdapterCallback
+import com.olegdev.documentcreator.adapters.baseadapter.BaseViewHolder
 import com.olegdev.documentcreator.models.Document
 import com.olegdev.documentcreator.utils.DateUtils
 

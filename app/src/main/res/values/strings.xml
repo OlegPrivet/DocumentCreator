@@ -11,5 +11,8 @@
     <string name="file_name">Название файла</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="more">More</string>
+    <string name="continuous_pages">Страницы без разрыва</string>
+    <string name="page_by_page">Постранично</string>
+    <string name="day_night">тема</string>
+    <string name="page">Страница</string>
 </resources>
