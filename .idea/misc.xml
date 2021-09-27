@@ -23,6 +23,8 @@
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/ic_dark_mode.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/ic_home.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/ic_light_mode.xml" value="0.1" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/ic_pag_by_pag.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/ic_page_break.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/ic_search.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/ic_settings.xml" value="1.321875" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/drawable/mtrl_fab_hide_motion_spec.xml" value="0.19583333333333333" />
@@ -47,6 +49,7 @@
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/menu/bottom_menu.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/menu/botton_app_bar_menu.xml" value="0.25" />
+        <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/menu/file_toolbar_menu.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/menu/search_menu.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.19583333333333333" />

@@ -9,13 +9,14 @@
         android:contentDescription="@string/day_night"
         app:showAsAction="ifRoom"
         />
-
     <item
         android:id="@+id/page_break"
-        android:title="@string/continuous_pages"
-        android:contentDescription="@string/continuous_pages"
-        app:showAsAction="never"
+        android:icon="@drawable/ic_page_break"
+        android:title="@string/page_by_page"
+        android:contentDescription="@string/page_by_page"
+        app:showAsAction="ifRoom"
         />
+
     <item
         android:id="@+id/page_by_page"
         android:title="@string/page_by_page"

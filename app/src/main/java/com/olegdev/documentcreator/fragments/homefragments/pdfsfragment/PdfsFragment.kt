@@ -1,7 +1,6 @@
 package com.olegdev.documentcreator.fragments.homefragments.pdfsfragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -14,19 +13,12 @@ import com.olegdev.documentcreator.MainActivity
 import com.olegdev.documentcreator.R
 import com.olegdev.documentcreator.constants.SharedPrefConstant.AUTO_SPACING
 import com.olegdev.documentcreator.constants.SharedPrefConstant.NIGHT_MODE
-import com.olegdev.documentcreator.constants.SharedPrefConstant.PAGE_FLING
 import com.olegdev.documentcreator.models.Document
 import com.olegdev.documentcreator.pdfscreenutils.customlinkhandler.CustomLinkHandler
 import com.olegdev.documentcreator.pdfscreenutils.pdfscrollhandler.CustomScrollHandler
 import com.olegdev.documentcreator.viewmodels.FileViewModel
 import com.pixplicity.easyprefs.library.Prefs
 import java.util.*
-
-
-
-
-
-
 
 private const val BOTTOM_BAR_SHOW = "BOTTOM_BAR_SHOW"
 
@@ -60,7 +52,6 @@ class PdfsFragment : Fragment() {
         }else{
             fileViewModel.setBarsShown(toolbarBarShow)
         }
-        setHasOptionsMenu(true)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -79,54 +70,8 @@ class PdfsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         pdfView = view.findViewById(R.id.pdf_view)
         toolbar = view.findViewById(R.id.toolbar)
-        (activity as MainActivity).setToolbar(toolbar = toolbar)
-        toolbar.inflateMenu(R.menu.file_toolbar_menu)
-        toolbar.setNavigationIcon(R.drawable.ic_back)
-        toolbar.setNavigationOnClickListener {
-            (activity as MainActivity).navController.popBackStack()
-        }
+        initToolbar()
         initDocument()
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.day_night -> {
-                val night_mode = Prefs.getBoolean(NIGHT_MODE, false)
-                pdfView.setNightMode(!night_mode)
-                pdfView.loadPages()
-                Prefs.putBoolean(NIGHT_MODE, !night_mode)
-                requireActivity().invalidateOptionsMenu()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-    override fun onPrepareOptionsMenu(menu: Menu) {
-        menu.clear()
-        val inflater: MenuInflater = requireActivity().menuInflater
-        inflater.inflate(R.menu.file_toolbar_menu, menu)
-        /*val day_night = menu.findItem(R.id.day_night)
-        Log.e(TAG, "onPrepareOptionsMenu - ${Prefs.getBoolean(NIGHT_MODE, false)}")
-        if (Prefs.getBoolean(NIGHT_MODE, false))
-            day_night.icon = ContextCompat.getDrawable(pdfView.context, R.drawable.ic_light_mode)
-        else
-            day_night.icon = ContextCompat.getDrawable(pdfView.context, R.drawable.ic_dark_mode)
-        super.onPrepareOptionsMenu(menu)*/
-        onCreateOptionsMenu(menu, inflater)
-
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        menu.clear()
-        inflater.inflate(R.menu.file_toolbar_menu, menu)
-        val day_night = menu.findItem(R.id.day_night)
-        Log.e(TAG, "onCreateOptionsMenu - ${Prefs.getBoolean(NIGHT_MODE, false)}")
-        if (Prefs.getBoolean(NIGHT_MODE, false))
-            day_night.icon = ContextCompat.getDrawable(pdfView.context, R.drawable.ic_light_mode)
-        else
-            day_night.icon = ContextCompat.getDrawable(pdfView.context, R.drawable.ic_dark_mode)
-        super.onCreateOptionsMenu(menu, inflater)
     }
 
     private fun initDocument() {
@@ -158,6 +103,7 @@ class PdfsFragment : Fragment() {
             .onTap {
                 if (it.action == MotionEvent.ACTION_DOWN) {
                     fileViewModel.setBarsShown(!toolbarBarShow)
+                    (activity as MainActivity).systemUiState(!toolbarBarShow)
                     return@onTap true
                 } else return@onTap false
             }
@@ -170,12 +116,57 @@ class PdfsFragment : Fragment() {
             .enableDoubletap(true)
             .swipeHorizontal(false)
             .autoSpacing(Prefs.getBoolean(AUTO_SPACING, true))
-            .pageFling(Prefs.getBoolean(PAGE_FLING, true))
+            .pageFling(Prefs.getBoolean(AUTO_SPACING, true))
             .nightMode(Prefs.getBoolean(NIGHT_MODE, false))
-            .pageSnap(true)
+            .pageSnap(Prefs.getBoolean(AUTO_SPACING, true))
             .linkHandler (CustomLinkHandler(pdfView))
             .scrollHandle(CustomScrollHandler(requireActivity().applicationContext, false))
             .load()
+        pdfView.loadPages()
+    }
+
+    private fun initToolbar() {
+        toolbar.inflateMenu(R.menu.file_toolbar_menu)
+        if (Prefs.getBoolean(NIGHT_MODE, false))
+            toolbar.menu.findItem(R.id.day_night).icon = ContextCompat.getDrawable(pdfView.context, R.drawable.ic_light_mode)
+        else
+            toolbar.menu.findItem(R.id.day_night).icon = ContextCompat.getDrawable(pdfView.context, R.drawable.ic_dark_mode)
+        if (Prefs.getBoolean(AUTO_SPACING, false))
+            toolbar.menu.findItem(R.id.page_break).icon = ContextCompat.getDrawable(pdfView.context, R.drawable.ic_page_break)
+        else
+            toolbar.menu.findItem(R.id.page_break).icon = ContextCompat.getDrawable(pdfView.context, R.drawable.ic_page_by_page)
+
+        toolbar.setOnMenuItemClickListener {
+            when (it.itemId){
+                R.id.day_night -> {
+                    val night_mode = !Prefs.getBoolean(NIGHT_MODE, false)
+                    pdfView.setNightMode(night_mode)
+                    pdfView.loadPages()
+                    Prefs.putBoolean(NIGHT_MODE, night_mode)
+                    if (night_mode)
+                        toolbar.menu.findItem(R.id.day_night).icon = ContextCompat.getDrawable(pdfView.context, R.drawable.ic_light_mode)
+                    else
+                        toolbar.menu.findItem(R.id.day_night).icon = ContextCompat.getDrawable(pdfView.context, R.drawable.ic_dark_mode)
+                    true
+                }
+                R.id.page_break -> {
+                    val auto_spacing = !Prefs.getBoolean(AUTO_SPACING, false)
+                    Prefs.putBoolean(AUTO_SPACING, auto_spacing)
+                    if (auto_spacing)
+                        toolbar.menu.findItem(R.id.page_break).icon = ContextCompat.getDrawable(pdfView.context, R.drawable.ic_page_break)
+                    else
+                        toolbar.menu.findItem(R.id.page_break).icon = ContextCompat.getDrawable(pdfView.context, R.drawable.ic_page_by_page)
+                    pdfView.recycle()
+                    loadPdf(document)
+                    true
+                }
+                else -> false
+            }
+        }
+        toolbar.setNavigationIcon(R.drawable.ic_back)
+        toolbar.setNavigationOnClickListener {
+            (activity as MainActivity).navController.popBackStack()
+        }
     }
 
     override fun onStop() {
@@ -183,10 +174,7 @@ class PdfsFragment : Fragment() {
         document.currentPage = currentPage
         document.date_modified = System.currentTimeMillis()
         fileViewModel.saveFile(document)
+        pdfView.recycle()
     }
 
-    override fun onDestroyView() {
-        (activity as MainActivity?)!!.setToolbar(null)
-        super.onDestroyView()
-    }
 }
