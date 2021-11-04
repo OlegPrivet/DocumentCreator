@@ -15,4 +15,12 @@
     <string name="page_by_page">Постранично</string>
     <string name="day_night">тема</string>
     <string name="page">Страница</string>
+    <string name="file_not_found">Файл не найден</string>
+    <string name="delete">Удалить</string>
+    <string name="share">Отправить</string>
+    <string name="send_from">Файл отправлен из приложения</string>
+    <string name="send_file">Отправка файла</string>
+    <string name="menu_file_explorer">Файлы</string>
+    <string name="perm_snack">Для просмотра файлов нужно разрешение на доступ к хранилищу</string>
+    <string name="setting_btn">Настройки</string>
 </resources>

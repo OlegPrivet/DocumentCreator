@@ -50,7 +50,7 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     testImplementation 'junit:junit:4.+'
@@ -60,7 +60,7 @@ dependencies {
     //kotlin
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.30"
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.30'
 
     //pdfviewer
     implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
@@ -93,4 +93,7 @@ dependencies {
 
     //EasyPerm
     implementation 'com.pixplicity.easyprefs:EasyPrefs:1.10.0'
+
+    //Dexter
+    implementation 'com.karumi:dexter:6.2.3'
 }

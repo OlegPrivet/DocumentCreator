@@ -12,10 +12,10 @@ import java.util.*
 data class Document(
     @PrimaryKey val uuid: UUID = UUID.randomUUID(),
     var id_file: Int = 0,
-    var name: String,
-    var path: Uri,
-    var mimeType: String? = null,
+    var name: String = "",
+    var path: Uri = Uri.parse(""),
+    var cachepath: Uri = Uri.parse(""),
     var size: String? = null,
-    var date_modified: Long? = null,
+    var date_modified: Long? = System.currentTimeMillis(),
     var currentPage: Int = 0
 ) : Parcelable

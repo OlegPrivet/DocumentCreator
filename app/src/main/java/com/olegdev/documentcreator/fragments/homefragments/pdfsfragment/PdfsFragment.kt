@@ -18,6 +18,7 @@ import com.olegdev.documentcreator.pdfscreenutils.customlinkhandler.CustomLinkHa
 import com.olegdev.documentcreator.pdfscreenutils.pdfscrollhandler.CustomScrollHandler
 import com.olegdev.documentcreator.viewmodels.FileViewModel
 import com.pixplicity.easyprefs.library.Prefs
+import java.io.*
 import java.util.*
 
 private const val BOTTOM_BAR_SHOW = "BOTTOM_BAR_SHOW"
@@ -44,12 +45,12 @@ class PdfsFragment : Fragment() {
         ).get(FileViewModel::class.java)
         docId = args.docId
         fileViewModel.loadFile(docId)
-        if (savedInstanceState != null){
-            if (savedInstanceState.getBoolean(BOTTOM_BAR_SHOW)){
+        if (savedInstanceState != null) {
+            if (savedInstanceState.getBoolean(BOTTOM_BAR_SHOW)) {
                 toolbarBarShow = savedInstanceState.getBoolean(BOTTOM_BAR_SHOW)
                 fileViewModel.setBarsShown(toolbarBarShow)
             }
-        }else{
+        } else {
             fileViewModel.setBarsShown(toolbarBarShow)
         }
     }
@@ -92,12 +93,11 @@ class PdfsFragment : Fragment() {
     }
 
     private fun loadPdf(document: Document) {
-        currentPage = document.currentPage
         pdfView.useBestQuality(true)
         pdfView.fromUri(document.path)
-            .defaultPage(currentPage)
+            .defaultPage(document.currentPage)
             .onPageChange { page, pageCount ->
-                toolbar.title = getString(R.string.page) + " ${page+1}/$pageCount"
+                toolbar.title = getString(R.string.page) + " ${page + 1}/$pageCount"
                 currentPage = page
             }
             .onTap {
@@ -119,44 +119,52 @@ class PdfsFragment : Fragment() {
             .pageFling(Prefs.getBoolean(AUTO_SPACING, true))
             .nightMode(Prefs.getBoolean(NIGHT_MODE, false))
             .pageSnap(Prefs.getBoolean(AUTO_SPACING, true))
-            .linkHandler (CustomLinkHandler(pdfView))
+            .linkHandler(CustomLinkHandler(pdfView))
             .scrollHandle(CustomScrollHandler(requireActivity().applicationContext, false))
             .load()
-        pdfView.loadPages()
     }
 
     private fun initToolbar() {
         toolbar.inflateMenu(R.menu.file_toolbar_menu)
         if (Prefs.getBoolean(NIGHT_MODE, false))
-            toolbar.menu.findItem(R.id.day_night).icon = ContextCompat.getDrawable(pdfView.context, R.drawable.ic_light_mode)
+            toolbar.menu.findItem(R.id.day_night).icon =
+                ContextCompat.getDrawable(pdfView.context, R.drawable.ic_light_mode)
         else
-            toolbar.menu.findItem(R.id.day_night).icon = ContextCompat.getDrawable(pdfView.context, R.drawable.ic_dark_mode)
+            toolbar.menu.findItem(R.id.day_night).icon =
+                ContextCompat.getDrawable(pdfView.context, R.drawable.ic_dark_mode)
         if (Prefs.getBoolean(AUTO_SPACING, false))
-            toolbar.menu.findItem(R.id.page_break).icon = ContextCompat.getDrawable(pdfView.context, R.drawable.ic_page_break)
+            toolbar.menu.findItem(R.id.page_break).icon =
+                ContextCompat.getDrawable(pdfView.context, R.drawable.ic_page_break)
         else
-            toolbar.menu.findItem(R.id.page_break).icon = ContextCompat.getDrawable(pdfView.context, R.drawable.ic_page_by_page)
+            toolbar.menu.findItem(R.id.page_break).icon =
+                ContextCompat.getDrawable(pdfView.context, R.drawable.ic_page_by_page)
 
         toolbar.setOnMenuItemClickListener {
-            when (it.itemId){
+            when (it.itemId) {
                 R.id.day_night -> {
                     val night_mode = !Prefs.getBoolean(NIGHT_MODE, false)
                     pdfView.setNightMode(night_mode)
                     pdfView.loadPages()
                     Prefs.putBoolean(NIGHT_MODE, night_mode)
                     if (night_mode)
-                        toolbar.menu.findItem(R.id.day_night).icon = ContextCompat.getDrawable(pdfView.context, R.drawable.ic_light_mode)
+                        toolbar.menu.findItem(R.id.day_night).icon =
+                            ContextCompat.getDrawable(pdfView.context, R.drawable.ic_light_mode)
                     else
-                        toolbar.menu.findItem(R.id.day_night).icon = ContextCompat.getDrawable(pdfView.context, R.drawable.ic_dark_mode)
+                        toolbar.menu.findItem(R.id.day_night).icon =
+                            ContextCompat.getDrawable(pdfView.context, R.drawable.ic_dark_mode)
                     true
                 }
                 R.id.page_break -> {
                     val auto_spacing = !Prefs.getBoolean(AUTO_SPACING, false)
                     Prefs.putBoolean(AUTO_SPACING, auto_spacing)
                     if (auto_spacing)
-                        toolbar.menu.findItem(R.id.page_break).icon = ContextCompat.getDrawable(pdfView.context, R.drawable.ic_page_break)
+                        toolbar.menu.findItem(R.id.page_break).icon =
+                            ContextCompat.getDrawable(pdfView.context, R.drawable.ic_page_break)
                     else
-                        toolbar.menu.findItem(R.id.page_break).icon = ContextCompat.getDrawable(pdfView.context, R.drawable.ic_page_by_page)
-                    pdfView.recycle()
+                        toolbar.menu.findItem(R.id.page_break).icon =
+                            ContextCompat.getDrawable(pdfView.context, R.drawable.ic_page_by_page)
+                    document.currentPage = currentPage
+                    fileViewModel.saveFile(document)
                     loadPdf(document)
                     true
                 }

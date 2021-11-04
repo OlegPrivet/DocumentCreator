@@ -55,6 +55,25 @@
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/xml/file_path.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/Code/Desktop/xyz/DocumentCreator/app/src/main/res/xml/network_security_config.xml" value="0.1814814814814815" />
+        <entry key="..\:/xyz/DocumentCreator/app/src/main/res/drawable-anydpi/ic_doc.xml" value="0.19583333333333333" />
+        <entry key="..\:/xyz/DocumentCreator/app/src/main/res/drawable-anydpi/ic_pdf.xml" value="0.19583333333333333" />
+        <entry key="..\:/xyz/DocumentCreator/app/src/main/res/drawable/ic_dark_mode.xml" value="0.19583333333333333" />
+        <entry key="..\:/xyz/DocumentCreator/app/src/main/res/drawable/ic_file_explorer.xml" value="0.19583333333333333" />
+        <entry key="..\:/xyz/DocumentCreator/app/src/main/res/drawable/ic_folder.xml" value="0.19583333333333333" />
+        <entry key="..\:/xyz/DocumentCreator/app/src/main/res/drawable/ic_settings.xml" value="0.19583333333333333" />
+        <entry key="..\:/xyz/DocumentCreator/app/src/main/res/drawable/ic_type_grid.xml" value="0.19583333333333333" />
+        <entry key="..\:/xyz/DocumentCreator/app/src/main/res/drawable/ic_type_list.xml" value="0.19583333333333333" />
+        <entry key="..\:/xyz/DocumentCreator/app/src/main/res/drawable/splash_background.xml" value="0.19583333333333333" />
+        <entry key="..\:/xyz/DocumentCreator/app/src/main/res/drawable/splash_background_dark.xml" value="0.19583333333333333" />
+        <entry key="..\:/xyz/DocumentCreator/app/src/main/res/drawable/splash_background_light.xml" value="0.19583333333333333" />
+        <entry key="..\:/xyz/DocumentCreator/app/src/main/res/layout/activity_main.xml" value="0.10833333333333334" />
+        <entry key="..\:/xyz/DocumentCreator/app/src/main/res/layout/activity_splash.xml" value="0.1814814814814815" />
+        <entry key="..\:/xyz/DocumentCreator/app/src/main/res/layout/fragment_file_explorer.xml" value="0.1814814814814815" />
+        <entry key="..\:/xyz/DocumentCreator/app/src/main/res/layout/fragment_file_explorer_list.xml" value="0.1814814814814815" />
+        <entry key="..\:/xyz/DocumentCreator/app/src/main/res/layout/fragment_home.xml" value="0.1814814814814815" />
+        <entry key="..\:/xyz/DocumentCreator/app/src/main/res/layout/rec_item.xml" value="0.25" />
+        <entry key="..\:/xyz/DocumentCreator/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1814814814814815" />
+        <entry key="..\:/xyz/DocumentCreator/app/src/main/res/menu/file_explorer_toolbar_menu.xml" value="0.1814814814814815" />
       </map>
     </option>
   </component>

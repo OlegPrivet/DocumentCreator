@@ -9,9 +9,8 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.olegdev.documentcreator.extension.setupWithNavController
+import com.olegdev.documentcreator.extensions.setupWithNavController
 
 
 //https://github.com/dmytrodanylyk/android-morphing-button
@@ -21,10 +20,13 @@ import com.olegdev.documentcreator.extension.setupWithNavController
 //https://github.com/airbnb/lottie-android - AdobeAfterEffects animation
 //https://github.com/burhanrashid52/PhotoEditor
 //https://github.com/barteksc/AndroidPdfViewer
+//https://github.com/Karumi/Dexter - permissions
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var bottomView: BottomNavigationView
+    private val TAG = MainActivity::class.simpleName
+
+    lateinit var bottomView: BottomNavigationView
     lateinit var navController: NavController
     private lateinit var mainView: ConstraintLayout
 
@@ -41,17 +43,20 @@ class MainActivity : AppCompatActivity() {
         bottomView.setupWithNavController(
             navGraphIds = listOf(
                 R.navigation.home_nav_graph,
+                R.navigation.file_explorer_nav_graph,
                 R.navigation.settings_nav_graph
             ),
             fragmentManager = supportFragmentManager,
             containerId = R.id.navController,
             intent = intent
         )
+
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.navController) as NavHostFragment
         navController = navHostFragment.navController
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.homeFragment -> showBottomNav()
+                R.id.fileExplorerFragment -> showBottomNav()
                 R.id.settingsFragment -> showBottomNav()
                 else -> hideBottomNav()
             }
@@ -66,10 +71,6 @@ class MainActivity : AppCompatActivity() {
     private fun hideBottomNav() {
         bottomView.visibility = View.GONE
 
-    }
-
-    fun setToolbar(toolbar: MaterialToolbar?) {
-        setSupportActionBar(toolbar)
     }
 
     fun systemUiState(show: Boolean){

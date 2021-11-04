@@ -22,7 +22,8 @@
         <action
             android:id="@+id/action_pdfsFragment_to_homeFragment"
             app:destination="@id/homeFragment"
-            app:popUpTo="@id/homeFragment" />
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="docId"
             app:argType="java.util.UUID" />
